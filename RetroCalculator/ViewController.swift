@@ -54,23 +54,23 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func onDividePressed(sender: AnyObject) {
+    @IBAction func onDividePressed(sender: UIButton) {
         processOperation(operation: .Divide)
     }
     
-    @IBAction func onMultiplyPressed(sender: AnyObject) {
+    @IBAction func onMultiplyPressed(sender: UIButton) {
         processOperation(operation: .Multiply)
     }
     
-    @IBAction func onSubtractPressed(sender: AnyObject) {
+    @IBAction func onSubtractPressed(sender: UIButton) {
         processOperation(operation: .Subtract)
     }
     
-    @IBAction func onAddPressed(sender: AnyObject) {
+    @IBAction func onAddPressed(sender: UIButton) {
         processOperation(operation: .Add)
     }
     
-    @IBAction func onEqualPressed(sender: AnyObject) {
+    @IBAction func onEqualPressed(sender: UIButton) {
         processOperation(operation: currentOperation)
     }
     
@@ -114,6 +114,14 @@ class ViewController: UIViewController {
             currentOperation = operation
         }
     }
-
+    
+    
+    @IBAction func clearBtnPressed(sender: UIButton) {
+        currentOperation = Operation.Empty
+        runningNumber = ""
+        leftValStr = ""
+        rightValStr = ""
+        result = ""
+        outputLbl.text = "0"
+    }
 }
-
